@@ -1,0 +1,79 @@
+Column names:
+ ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn']
+
+
+ churn describe:
+  SeniorCitizen       tenure  MonthlyCharges  TotalCharges
+count    7032.000000  7032.000000     7032.000000   7032.000000
+mean        0.162400    32.421786       64.798208   2283.300441
+std         0.368844    24.545260       30.085974   2266.771362
+min         0.000000     1.000000       18.250000     18.800000
+25%         0.000000     9.000000       35.587500    401.450000
+50%         0.000000    29.000000       70.350000   1397.475000
+75%         0.000000    55.000000       89.862500   3794.737500
+max         1.000000    72.000000      118.750000   8684.800000
+
+
+Churn rate:
+Churn
+No     0.734215
+Yes    0.265785
+
+Customers who leave the service typically do so early in their lifecycle. Once a customer stays beyond a year, the likelihood of churn drops significantly. This suggests that improving the onboarding experience and providing early incentives could substantially reduce churn.
+
+Fiber optic users churn more — likely due to higher pricing or service issues compared to DSL.
+
+Customers without these add-ons churn more, showing that value-added services improve loyalty.
+
+Key Observations
+
+# box plot
+Median Comparison
+
+Median (middle line inside each box) for churned customers (Yes) is higher (~$80) than for non-churned customers (~$65).
+
+➤ This means customers paying higher monthly charges are more likely to churn.
+
+Spread of Data (IQR)
+
+The box (interquartile range) for churned customers is narrower.
+
+Suggests churned customers’ charges are clustered around higher amounts (less variability).
+
+Non-churned customers have a wider spread in their charges.
+
+Some pay low, some high — meaning pricing alone may not drive churn for them.
+
+Outliers
+
+A few customers with very high charges still exist in both groups, but more churn occurs among higher-charge users.
+
+
+InternetService:
+InternetService
+Fiber optic    0.418928
+DSL            0.189983
+No             0.074342
+Name: Churn_flag, dtype: float64
+
+OnlineSecurity:
+OnlineSecurity
+No                     0.417787
+Yes                    0.146402
+No internet service    0.074342
+Name: Churn_flag, dtype: float64
+
+OnlineBackup:
+OnlineBackup
+No                     0.399417
+Yes                    0.215670
+No internet service    0.074342
+Name: Churn_flag, dtype: float64
+
+TechSupport:
+TechSupport
+No                     0.416475
+Yes                    0.151961
+No internet service    0.074342
+Name: Churn_flag, dtype: float64
+
