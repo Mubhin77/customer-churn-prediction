@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Churn Prediction</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Customer Churn Prediction</h1>
+
+    <!-- Manual Input -->
+    <form id="manual-form">
+      <h2>Manual Input</h2>
+      <label>Gender:</label>
+      <select id="gender"><option>Male</option><option>Female</option></select>
+      <label>Senior Citizen:</label>
+      <input type="number" id="SeniorCitizen">
+      <label>Partner:</label>
+      <select id="Partner"><option>Yes</option><option>No</option></select>
+      <label>Dependents:</label>
+      <select id="Dependents"><option>Yes</option><option>No</option></select>
+      <label>Tenure:</label>
+      <input type="number" id="tenure">
+      <label>Phone Service:</label>
+      <select id="PhoneService"><option>Yes</option><option>No</option></select>
+      <label>Multiple Lines:</label>
+      <select id="MultipleLines"><option>Yes</option><option>No</option><option>No phone service</option></select>
+      <label>Internet Service:</label>
+      <select id="InternetService"><option>DSL</option><option>Fiber optic</option><option>No</option></select>
+      <label>Online Security:</label>
+      <select id="OnlineSecurity"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <label>Online Backup:</label>
+      <select id="OnlineBackup"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <label>Device Protection:</label>
+      <select id="DeviceProtection"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <label>Tech Support:</label>
+      <select id="TechSupport"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <label>Streaming TV:</label>
+      <select id="StreamingTV"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <label>Streaming Movies:</label>
+      <select id="StreamingMovies"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <label>Contract:</label>
+      <select id="Contract"><option>Month-to-month</option><option>One year</option><option>Two year</option></select>
+      <label>Paperless Billing:</label>
+      <select id="PaperlessBilling"><option>Yes</option><option>No</option></select>
+      <label>Payment Method:</label>
+      <select id="PaymentMethod"><option>Electronic check</option><option>Mailed check</option><option>Bank transfer</option><option>Credit card</option></select>
+      <label>Monthly Charges:</label>
+      <input type="number" id="MonthlyCharges" step="0.1">
+      <label>Total Charges:</label>
+      <input type="number" id="TotalCharges" step="0.1">
+      <button type="submit">Predict</button>
+    </form>
+
+    <div id="manual-result"></div>
+
+    <!-- CSV Upload -->
+    <h2>Upload CSV</h2>
+    <input type="file" id="csvFile" accept=".csv">
+    <button id="uploadBtn">Upload & Predict</button>
+    <div id="csv-result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
