@@ -4,38 +4,6 @@
 This project is an end-to-end AI/ML solution that predicts customer churn for a subscription-based business.  
 It enables businesses to proactively detect customers likely to churn so they can implement targeted retention strategies, reducing revenue loss.
 
----
-
-## Folder Structure
-
-customer-churn-prediction/
-│
-├── app/
-│ ├── main.py # FastAPI backend
-│ ├── predicted_churn.csv # Downloadable predictions from CSV upload
-│
-├── data/
-│ └── churn.csv # Dataset
-│
-├── frontend/
-│ ├── index.html # Frontend HTML
-│ ├── script.js # Frontend logic
-│ └── styles.css # Styling
-│
-├── model/
-│ ├── final.ipynb # Model training notebook
-│ ├── churn_model_deployed.pkl # Trained model
-│
-├── notebooks/
-│ └── final_eda.ipynb # Exploratory Data Analysis
-│
-├── sample_customers.csv # Sample CSV for testing
-├── requirements.txt # Python dependencies
-├── README.md
-
-
----
-
 ## Dataset
 We use the **Telco Customer Churn Dataset** (Kaggle):  
 [Telco Customer Churn](https://www.kaggle.com/blastchar/telco-customer-churn)
