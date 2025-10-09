@@ -18,7 +18,7 @@ app.add_middleware(
 )
 
 BASE_DIR = Path(__file__).resolve().parent
-templates = Jinja2Templates(directory=str(BASE_DIR))
+templates = Jinja2Templates(directory=str(BASE_DIR.parent / "frontend"))
 
 # Load model and threshold
 deployment_info = joblib.load("../model/churn_model_deployed.pkl")
