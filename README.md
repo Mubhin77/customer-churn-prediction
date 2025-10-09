@@ -143,14 +143,22 @@ The application will be available at `http://localhost:8000`
 ```
 customer-churn-prediction/
 ├── app/
-│   ├── main.py                 # FastAPI application
-│   ├── requirements.txt        # Python dependencies
-│   └── templates/              # HTML templates
-├── notebooks/
-│   └── final_eda.ipynb        # Exploratory Data Analysis
+│   ├── main.py                    # FastAPI backend application
+│   └── prediction_churn.csv       # Downloaded predictions (generated)
+├── data/
+│   └── churn.csv                  # Training dataset
+├── frontend/
+│   ├── index.html                 # Web interface
+│   ├── script.js                  # Frontend JavaScript
+│   └── styles.css                 # Styling
 ├── model/
-│   └── final.ipynb            # Model training and evaluation
-└── README.md
+│   ├── final.ipynb                # Model training notebook
+│   └── *.pkl                      # Trained model files
+├── notebooks/
+│   └── final_eda.ipynb            # Exploratory Data Analysis
+├── README.md                      # Project documentation
+├── requirements.txt               # Python dependencies
+└── sample_customers.csv           # Sample data for testing
 ```
 
 ## 🔄 MLOps & Deployment
