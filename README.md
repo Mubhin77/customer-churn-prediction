@@ -39,7 +39,7 @@ uvicorn main:app --reload
 
 
 
-# Two prediction modes:
+** Two prediction modes:**
 
 - CSV Upload Prediction
 
