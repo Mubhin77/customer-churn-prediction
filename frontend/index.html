@@ -11,45 +11,99 @@
 
     <!-- Manual Input -->
     <form id="manual-form">
-      <h2>Manual Input</h2>
       <label>Gender:</label>
-      <select id="gender"><option>Male</option><option>Female</option></select>
+      <select id="gender" required>
+        <option value="">--Select--</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+
       <label>Senior Citizen:</label>
-      <input type="number" id="SeniorCitizen">
+      <select id="SeniorCitizen" required>
+        <option value="">--Select--</option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+
       <label>Partner:</label>
       <select id="Partner"><option>Yes</option><option>No</option></select>
+
       <label>Dependents:</label>
       <select id="Dependents"><option>Yes</option><option>No</option></select>
-      <label>Tenure:</label>
-      <input type="number" id="tenure">
+
+      <label>Tenure (Months):</label>
+      <input type="number" id="tenure" min="0" placeholder="e.g., 12">
+      <!-- <span class="note">Enter the number of months the customer has stayed</span> -->
+
       <label>Phone Service:</label>
       <select id="PhoneService"><option>Yes</option><option>No</option></select>
+
       <label>Multiple Lines:</label>
-      <select id="MultipleLines"><option>Yes</option><option>No</option><option>No phone service</option></select>
+      <select id="MultipleLines">
+        <option>Yes</option>
+        <option>No</option>
+        <option>No phone service</option>
+      </select>
+
       <label>Internet Service:</label>
-      <select id="InternetService"><option>DSL</option><option>Fiber optic</option><option>No</option></select>
+      <select id="InternetService">
+        <option>DSL</option>
+        <option>Fiber optic</option>
+        <option>No</option>
+      </select>
+
       <label>Online Security:</label>
-      <select id="OnlineSecurity"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <select id="OnlineSecurity">
+        <option>Yes</option><option>No</option><option>No internet service</option>
+      </select>
+
       <label>Online Backup:</label>
-      <select id="OnlineBackup"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <select id="OnlineBackup">
+        <option>Yes</option><option>No</option><option>No internet service</option>
+      </select>
+
       <label>Device Protection:</label>
-      <select id="DeviceProtection"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <select id="DeviceProtection">
+        <option>Yes</option><option>No</option><option>No internet service</option>
+      </select>
+
       <label>Tech Support:</label>
-      <select id="TechSupport"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <select id="TechSupport">
+        <option>Yes</option><option>No</option><option>No internet service</option>
+      </select>
+
       <label>Streaming TV:</label>
-      <select id="StreamingTV"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <select id="StreamingTV">
+        <option>Yes</option><option>No</option><option>No internet service</option>
+      </select>
+
       <label>Streaming Movies:</label>
-      <select id="StreamingMovies"><option>Yes</option><option>No</option><option>No internet service</option></select>
+      <select id="StreamingMovies">
+        <option>Yes</option><option>No</option><option>No internet service</option>
+      </select>
+
       <label>Contract:</label>
-      <select id="Contract"><option>Month-to-month</option><option>One year</option><option>Two year</option></select>
+      <select id="Contract">
+        <option>Month-to-month</option><option>One year</option><option>Two year</option>
+      </select>
+
       <label>Paperless Billing:</label>
       <select id="PaperlessBilling"><option>Yes</option><option>No</option></select>
+
       <label>Payment Method:</label>
-      <select id="PaymentMethod"><option>Electronic check</option><option>Mailed check</option><option>Bank transfer</option><option>Credit card</option></select>
-      <label>Monthly Charges:</label>
-      <input type="number" id="MonthlyCharges" step="0.1">
-      <label>Total Charges:</label>
-      <input type="number" id="TotalCharges" step="0.1">
+      <select id="PaymentMethod">
+        <option>Electronic check</option>
+        <option>Mailed check</option>
+        <option>Bank transfer</option>
+        <option>Credit card</option>
+      </select>
+
+      <label>Monthly Charges ($):</label>
+      <input type="number" id="MonthlyCharges" step="0.1" placeholder="e.g., 70.5">
+
+      <label>Total Charges ($):</label>
+      <input type="number" id="TotalCharges" step="0.1" placeholder="e.g., 1200">
+
       <button type="submit">Predict</button>
     </form>
 

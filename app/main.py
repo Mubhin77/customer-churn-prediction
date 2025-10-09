@@ -111,4 +111,5 @@ async def predict_from_form(
         "risk": risk[0],
         "churn_pred": "Yes" if pred[0] == 1 else "No"
     }
-    return templates.TemplateResponse("index.html", {"request": request, "result": result})
+    # return templates.TemplateResponse("index.html", {"request": request, "result": result})
+    return JSONResponse(result)

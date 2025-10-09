@@ -1,5 +1,6 @@
 document.getElementById("manual-form").addEventListener("submit", async (e) => {
   e.preventDefault();
+
   const body = {
     gender: document.getElementById("gender").value,
     SeniorCitizen: parseInt(document.getElementById("SeniorCitizen").value),
@@ -27,13 +28,27 @@ document.getElementById("manual-form").addEventListener("submit", async (e) => {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(body)
   });
-  const text = await res.text();
-  document.getElementById("manual-result").innerHTML = text;
+
+  const data = await res.json();
+  const resultDiv = document.getElementById("manual-result");
+
+  let color =
+    data.risk === "High Risk" ? "#e74c3c" :
+    data.risk === "Medium Risk" ? "#f1c40f" : "#2ecc71";
+
+  resultDiv.innerHTML = `
+    <div style="border:2px solid ${color}; padding:15px; border-radius:10px;">
+      <h3 style="color:${color};">Prediction Result</h3>
+      <p><strong>Churn:</strong> ${data.churn_pred}</p>
+      <p><strong>Probability:</strong> ${data.probability}%</p>
+      <p><strong>Risk Level:</strong> <span style="color:${color}">${data.risk}</span></p>
+    </div>
+  `;
 });
 
 document.getElementById("uploadBtn").addEventListener("click", async () => {
   const fileInput = document.getElementById("csvFile");
-  if (!fileInput.files.length) return alert("Select CSV file.");
+  if (!fileInput.files.length) return alert("Please select a CSV file.");
 
   const formData = new FormData();
   formData.append("file", fileInput.files[0]);
@@ -45,11 +60,13 @@ document.getElementById("uploadBtn").addEventListener("click", async () => {
   const data = await res.json();
 
   const csvResultDiv = document.getElementById("csv-result");
+
   if (data.download_link) {
     csvResultDiv.innerHTML = `
-      ✅ ${data.message} |
+      ✅ ${data.message}<br>
       <a href="${data.download_link}" target="_blank">📥 Download Predictions</a>
     `;
+    alert("✅ Predictions have been generated and downloaded.\nCheck your app folder for the predictions CSV file.");
   } else {
     csvResultDiv.innerHTML = `❌ ${data.error || "Error occurred"}`;
   }
