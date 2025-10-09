@@ -1,10 +1,20 @@
+# Web Framework
 fastapi
 uvicorn
+
+# Data Processing
 pandas
 numpy
+
+# Machine Learning
 scikit-learn
 joblib
+
+# File Handling
 python-multipart
-aiofiles
-seaborn
-matplotlib
+
+# Templating
+jinja2
+
+# ASGI Server
+python-dotenv
