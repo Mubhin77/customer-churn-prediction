@@ -2,6 +2,8 @@ from fastapi import FastAPI, Request, UploadFile, Form
 from fastapi.responses import HTMLResponse, FileResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+
 from pathlib import Path
 import pandas as pd
 import joblib
@@ -18,7 +20,10 @@ app.add_middleware(
 )
 
 BASE_DIR = Path(__file__).resolve().parent
-templates = Jinja2Templates(directory=str(BASE_DIR.parent / "frontend"))
+FRONTEND_DIR = BASE_DIR.parent / "frontend"
+
+app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
+templates = Jinja2Templates(directory=str(FRONTEND_DIR))
 
 # Load model and threshold
 deployment_info = joblib.load("../model/churn_model_deployed.pkl")
