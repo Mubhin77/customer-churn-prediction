@@ -26,17 +26,17 @@
       </select>
 
       <label>Partner:</label>
-      <select id="Partner"><option>Yes</option><option>No</option></select>
+      <select id="Partner" required><option>Yes</option><option>No</option></select>
 
       <label>Dependents:</label>
       <select id="Dependents"><option>Yes</option><option>No</option></select>
 
       <label>Tenure (Months):</label>
-      <input type="number" id="tenure" min="0" placeholder="e.g., 12">
+      <input type="number" id="tenure" min="0" placeholder="e.g., 12" required>
       <!-- <span class="note">Enter the number of months the customer has stayed</span> -->
 
       <label>Phone Service:</label>
-      <select id="PhoneService"><option>Yes</option><option>No</option></select>
+      <select id="PhoneService" required><option>Yes</option><option>No</option></select>
 
       <label>Multiple Lines:</label>
       <select id="MultipleLines">
@@ -46,14 +46,14 @@
       </select>
 
       <label>Internet Service:</label>
-      <select id="InternetService">
+      <select id="InternetService" required>
         <option>DSL</option>
         <option>Fiber optic</option>
         <option>No</option>
       </select>
 
       <label>Online Security:</label>
-      <select id="OnlineSecurity">
+      <select id="OnlineSecurity" required>
         <option>Yes</option><option>No</option><option>No internet service</option>
       </select>
 
@@ -63,7 +63,7 @@
       </select>
 
       <label>Device Protection:</label>
-      <select id="DeviceProtection">
+      <select id="DeviceProtection" required>
         <option>Yes</option><option>No</option><option>No internet service</option>
       </select>
 
@@ -73,7 +73,7 @@
       </select>
 
       <label>Streaming TV:</label>
-      <select id="StreamingTV">
+      <select id="StreamingTV" required>
         <option>Yes</option><option>No</option><option>No internet service</option>
       </select>
 
@@ -83,7 +83,7 @@
       </select>
 
       <label>Contract:</label>
-      <select id="Contract">
+      <select id="Contract" required>
         <option>Month-to-month</option><option>One year</option><option>Two year</option>
       </select>
 
@@ -91,7 +91,7 @@
       <select id="PaperlessBilling"><option>Yes</option><option>No</option></select>
 
       <label>Payment Method:</label>
-      <select id="PaymentMethod">
+      <select id="PaymentMethod" required>
         <option>Electronic check</option>
         <option>Mailed check</option>
         <option>Bank transfer</option>
@@ -99,7 +99,7 @@
       </select>
 
       <label>Monthly Charges ($):</label>
-      <input type="number" id="MonthlyCharges" step="0.1" placeholder="e.g., 70.5">
+      <input type="number" id="MonthlyCharges" step="0.1" placeholder="e.g., 70.5" required>
 
       <label>Total Charges ($):</label>
       <input type="number" id="TotalCharges" step="0.1" placeholder="e.g., 1200">
