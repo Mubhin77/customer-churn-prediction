@@ -204,7 +204,8 @@ Threshold Tuning → Deployment → Monitoring
 ## 👤 Author
 
 **Mubhin Basnet**  
-BSc IT – King's College  
+BSc IT – King's College 
+basnetmubhin77@gmail.com 
 [GitHub](https://github.com/Mubhin77)
 
 ---
